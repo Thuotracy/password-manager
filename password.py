@@ -27,14 +27,14 @@ def delete_user(self):
     """
     User.user_list.remove(self)
 
-# class Credentils():
-#    """
-#    Creates credential class so as to create new object
-#    """ 
-#    credentils_list = []
-# #    @classmethod
+class Credentils():
+   """
+   Creates credential class so as to create new object
+   """ 
+   credentils_list = []
+#    @classmethod
        
-# def verify_user(tracy,username,password):   
-#     """
-#     method to confirm whether the user is in our user_list
-#     """
+def verify_user(tracy,username,password):   
+    """
+    method to confirm whether the user is in our user_list
+    """
