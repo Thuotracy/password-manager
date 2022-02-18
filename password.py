@@ -1,3 +1,5 @@
+from tkinter import Y
+from tkinter.messagebox import YES
 import pyperclip
 
 
@@ -52,7 +54,7 @@ def _init_(self,account,userName,password):
    """
    self.account = account
    self.userName = userName
-   self.password = password
+   self.password = password 
 
 def save_details(self):
     """
@@ -87,8 +89,17 @@ def if_credential_exist(tracy,account)
    """
    for credential in tracy.credentials_list:
        if credential.account == account:
-           return Yes
-    return No  
+           return YES
+       return NO 
+
+    #   @aclassmethod 
+def display_credentials(tracy):
+    """
+    method that returns all items in credential list
+    """    
+    return tracy.credentials_list
+
+    
 
 
 
