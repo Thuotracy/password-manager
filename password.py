@@ -1,3 +1,6 @@
+import pyperclip
+
+
 class User:
     """
     Create user class to add new user
@@ -40,8 +43,8 @@ def verify_user(tracy,username,password):
     """
 a_user = ""
 for user in User.user_list:
-  if(user.username == username and user.password == password):
-     a_user == user.usename
+    if(user.username == username and user.password == password):
+      a_user == user.username
     return a_user 
 def _init_(self,account,userName,password):
   """ 
@@ -59,7 +62,30 @@ def save_details(self):
 
 def delete_credentials(self):
     """
-    method used to delete credentialsfreom the credentials list
+    method used to delete credentials from the credentials list
     """
     Credentials.credentials_list.remove(self)
+
+    # @classmethod
+def find_credentials(tracy,account):
+    """
+    method that collects an account_name and outputs the credential that matches the account_name
+    """
+    for credentials in tracy.credentials_list:
+        if credentials.account == account:
+            return credentials
+
+    # @classmethod
+def copy_password  (tracy,account):
+    found_credentials =Credentials.find_credential(account)
+    pyperclip.copy(found_credentials.password)
+   
+    # @classmethod
+def if_credential_exist(tracy,account)
+"""
+method to check if credential is in credential list then returns true if credential exist and false if credential does not exist
+"""
+
+
+
 
