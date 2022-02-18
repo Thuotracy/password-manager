@@ -18,3 +18,11 @@ def test_init(self):
     """
     self.assertEqual(self.new_user.username,'Tracy Wngari')
     self.assertEqual(self.new_user.password,'thuo')
+
+def test_save_user(self):
+    """
+    a test to check if new user has been added to User list
+    """
+    self.new_user.save_user()
+    self.assertEqual(User.user_list)
+    
