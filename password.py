@@ -82,9 +82,13 @@ def copy_password  (tracy,account):
    
     # @classmethod
 def if_credential_exist(tracy,account)
-"""
-method to check if credential is in credential list then returns yes if credential exist and no if credential does not exist
-"""
+   """
+   method to check if credential is in credential list then returns yes if credential exist and no if credential does not exist
+   """
+   for credential in tracy.credentials_list:
+       if credential.account == account:
+           return Yes
+    return No  
 
 
 
