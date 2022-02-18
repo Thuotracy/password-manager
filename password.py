@@ -27,7 +27,7 @@ def delete_user(self):
     """
     User.user_list.remove(self)
 
-class Credentils():
+class Credentials():
    """
    Creates credential class so as to create new object
    """ 
@@ -38,6 +38,28 @@ def verify_user(tracy,username,password):
     """
     method to confirm whether the user is in our user_list
     """
-# a_user =""
-# for user in User.user_list:
-# if()
+a_user = ""
+for user in User.user_list:
+  if(user.username == username and user.password == password):
+     a_user == user.usename
+    return a_user 
+def _init_(self,account,userName,password):
+  """ 
+   method that tells user credentials to be stored
+   """
+   self.account = account
+   self.userName = userName
+   self.password = password
+
+def save_details(self):
+    """
+    method to save a new credential to the credentials list
+    """   
+    Credentials.credentials_list.append(self)
+
+def delete_credentials(self):
+    """
+    method used to delete credentialsfreom the credentials list
+    """
+    Credentials.credentials_list.remove(self)
+
