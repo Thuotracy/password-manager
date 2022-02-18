@@ -10,4 +10,10 @@ def setUp(self):
     """
     method that is executed before each individual tets methods run
     """
+    self.new_user = User('Tracy Wangari','thuo')
+
+def test_init(self):
+    """
+    a test to confirm whether the object is working correctly
+    """
     
