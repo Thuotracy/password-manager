@@ -18,14 +18,14 @@ def save_user(self):
     User.user_list.append(self)
 
     # @classmethod
-# def show_user(tracy):
-#     return tracy.user_list
+def show_user(tracy):
+    return tracy.user_list
 
-# def delete_user(self):
-#     """   
-#     method that deletes a saved account
-#     """
-#     User.user_list.remove(self)
+def delete_user(self):
+    """   
+    method that deletes a saved account
+    """
+    User.user_list.remove(self)
 
 # class Credentils():
 #    """
