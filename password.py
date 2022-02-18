@@ -38,3 +38,6 @@ def verify_user(tracy,username,password):
     """
     method to confirm whether the user is in our user_list
     """
+# a_user =""
+# for user in User.user_list:
+# if()
