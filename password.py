@@ -11,13 +11,13 @@ def __init__(self, username, password):
     self.username = username
     self.password = password
 
-# def save_user(self): 
-#     """  
-#     method that saves a new user
-#     """
-#     User.user_list.append(self)
+def save_user(self): 
+    """  
+    method that saves a new user
+    """
+    User.user_list.append(self)
 
-#     # @classmethod
+    # @classmethod
 # def show_user(tracy):
 #     return tracy.user_list
 
