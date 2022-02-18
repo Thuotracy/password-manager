@@ -16,4 +16,5 @@ def test_init(self):
     """
     a test to confirm whether the object is working correctly
     """
-    
+    self.assertEqual(self.new_user.username,'Tracy Wngari')
+    self.assertEqual(self.new_user.password,'thuo')
