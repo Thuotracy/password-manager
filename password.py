@@ -99,7 +99,13 @@ def display_credentials(tracy):
     """    
     return tracy.credentials_list
 
+def generatePassword:
+    """
+    generate random password
+    """
     
+
+
 
 
 
