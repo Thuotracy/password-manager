@@ -1,15 +1,15 @@
 class User:
-#     """
-#     Create user class to add new user
-#     """
-#     user_list = []
+    """
+    Create user class to add new user
+    """
+    user_list = []
 
-# def __init__(self, username, password):
-#     """
-#     method that allows us to define properties of a user
-#     """
-#     self.username = username
-#     self.password = password
+def __init__(self, username, password):
+    """
+    method that allows us to define properties of a user
+    """
+    self.username = username
+    self.password = password
 
 # def save_user(self): 
 #     """  
