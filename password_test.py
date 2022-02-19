@@ -58,4 +58,19 @@ def test_save_many_accounts(self):
     """
     test to see if we can save many accounts
     """
+    self.new_credentials.save_detail()
+    test_credentials = Credentials('Gmail', 'Yasmine Said','yussuf')
+    test_credentials.save_details()
+    self.assertEqual(Credentials.credentils_list)
+
+def test_delete_credential(self):
+    """
+    test to see if we can delete an account from our credentials list
+    """
+    self.new_credential.save_details()
+    test_credential = Credentials('Gmail', 'Yasmine Said', 'yussuf')
+    test_credential.save_details()
+
+    self.new_credential.delete_credential()
+    self.assertEqual(Credentials.credentils_list)
     
