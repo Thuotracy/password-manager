@@ -78,4 +78,9 @@ def test_find_credential(self):
     """
     test to see if we can find a credential by using the account name and show the details
     """
-    
+    self.new_credential.save_details()
+    test_credential = Credentials('Gmail', 'Yasmine Said', 'yussuf')
+    test_credential.save_details
+
+    the_credential = Credentials.find_credential('Gmail')
+    self.assertEqual(the_credential.account,test_credential.account)
