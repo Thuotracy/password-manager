@@ -94,4 +94,12 @@ def test_credential_exist(self):
     the_credential.save_details()
     credential_is_found = Credentials.if_credential_exist('Gmail')
     self.assertEqual(credential_is_found)
-    
+
+def test_display_all_saved_credentials(self):
+    """
+    test that shows all saved credentials in the credential list
+    """    
+    self.assertEqual(Credentials.diplay_credentials(),Credentials.credentils_list)
+
+if __name__ == "__main__":
+    unittest.main()
