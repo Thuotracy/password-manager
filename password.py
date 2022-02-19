@@ -1,5 +1,3 @@
-# from random
-# from string
 import pyperclip
 
 
@@ -23,14 +21,14 @@ def save_user(self):
     User.user_list.append(self)
 
     @classmethod 
-    def show_user(tracy):
-      return tracy.user_list
+    def show_user(cls):
+      return cls.user_list
 
-def delete_user(self):
-    """   
-    method that deletes a saved account
-    """
-    User.user_list.remove(self)
+# def delete_user(self):
+#     """   
+#     method that deletes a saved account
+#     """
+#     User.user_list.remove(self)
 
 class Credentials():
    """
@@ -38,18 +36,7 @@ class Credentials():
    """ 
    credentials_list = []
 
-@classmethod
-def verify_user(tracy,username,password):   
-    """
-    method to confirm whether the user is in our user_list
-    """
-a_user = ""
-for user in User.user_list:
-    if(user.username == username and user.password == password):
-      a_user == user.username  
-    return a_user
-
-def _init_(self,account,userName,password):
+   def _init_(self,account,userName,password):
         """ 
         method that tells user credentials to be stored
         """
@@ -57,11 +44,20 @@ def _init_(self,account,userName,password):
         self.userName = userName
         self.password = password 
 
+@classmethod
+def verify_user(cls,username,password):   
+    """
+    method to confirm whether the user is in our user_list
+    """
+    for details in cls.credential_list:
+      if details.username ==username:
+          return details  
+
 def save_details(self):
         """
         method to save a new credential to the credentials list
         """   
-Credentials.credentials_list.append(self)
+        Credentials.credentials_list.append(self)
 
 def delete_credentials(self):
     """
@@ -70,38 +66,38 @@ def delete_credentials(self):
     Credentials.credentials_list.remove(self)
 
 @classmethod
-def find_credentials(tracy,account):
+def find_credentials(cls,account):
     """
     method that collects an account_name and outputs the credential that matches the account_name
     """
-    for credentials in tracy.credentials_list:
+    for credentials in cls.credentials_list:
         if credentials.account == account:
             return credentials
 
 @classmethod
-def copy_password  (tracy,account):
+def copy_password  (cls,account):
     found_credentials =Credentials.find_credential(account)
     pyperclip.copy(found_credentials.password)
    
 @classmethod
-def if_credential_exist(tracy,account)
+def if_credential_exist(cls,account):
    """
    method to check if credential is in credential list then returns true if credential exist and false if credential does not exist
    """
-   for credential in tracy.credentials_list:
+   for credential in cls.credentials_list:
        if credential.account == account:
            return True
        return False
 
 @classmethod 
 
-def display_credentials(tracy):
+def display_credentials(cls):
     """
     method that returns all items in credential list
     """    
-    return tracy.credentials_list
+    return cls.credentials_list
 
-def generate_password:
+def generate_password():
     """
     generate random password
     """
