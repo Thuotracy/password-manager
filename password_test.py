@@ -25,4 +25,28 @@ def test_save_user(self):
     """
     self.new_user.save_user()
     self.assertEqual(User.user_list)
+
+class TestCredentials(unittest.TestCase):
+    """
+    a test that defines test casee for the credentials class
+    """    
+
+def setUp(self):
+    """
+    method that is executed before each individual credentialtest method runs
+    """
+    self.new_credential= Credentials('Gmail', 'Tracy Wangari', 'thuo')
+
+def test_init(self):
+    """
+    test to check whether a new credential information has been entered correctly
+    """
+    self.assertEqual(self.new_credential.account,'Gmail')
+    self.assertEqual(self.new_credential.username,'Tracy Wangari')
+    self.assertEqual(self.new_credential.passwword,'thuo')
+
+def save_credential_test(self):
+    """
+    test to check whether the credential is saved to the credential list
+    """
     
