@@ -49,4 +49,13 @@ def save_credential_test(self):
     """
     test to check whether the credential is saved to the credential list
     """
+    self.new_credential.save_detail()
+    self.assertEqual(Credentials.credentials_list)
+
+Credentials.credentils_list = []
+
+def test_save_many_accounts(self):
+    """
+    test to see if we can save many accounts
+    """
     
