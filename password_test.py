@@ -73,4 +73,9 @@ def test_delete_credential(self):
 
     self.new_credential.delete_credential()
     self.assertEqual(Credentials.credentils_list)
+
+def test_find_credential(self):
+    """
+    test to see if we can find a credential by using the account name and show the details
+    """
     
