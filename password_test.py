@@ -84,3 +84,14 @@ def test_find_credential(self):
 
     the_credential = Credentials.find_credential('Gmail')
     self.assertEqual(the_credential.account,test_credential.account)
+
+def test_credential_exist(self):
+    """
+    test to if we can output yes or no if the credential exists
+    """    
+    self.new_credential.save_details()
+    the_credential = Credentials('Gmail', 'Yasmine Said', 'yussuf')
+    the_credential.save_details()
+    credential_is_found = Credentials.if_credential_exist('Gmail')
+    self.assertEqual(credential_is_found)
+    
