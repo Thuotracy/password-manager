@@ -154,10 +154,10 @@ elif short_code == 'generate':
 elif short_code == 'exit':
         print("Thank you for using password manager")
         break 
-# else:
-#       print:("Wrong entry, Please try again")
-#        else:
-#             print("Enter a valid input to continue")
+else:
+      print:("Wrong entry, Please try again")
+       else:
+            print("Enter a valid input to continue")
 
-#        if __name__ == '__main__':
-#         password()
+       if __name__ == '__main__':
+        password()
