@@ -24,12 +24,6 @@ def save_user(self):
     def show_user(cls):
       return cls.user_list
 
-# def delete_user(self):
-#     """   
-#     method that deletes a saved account
-#     """
-#     User.user_list.remove(self)
-
 class Credentials():
    """
    Creates credential class so as to create new object
