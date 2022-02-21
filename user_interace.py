@@ -1,12 +1,6 @@
 from password import User, find_credentials 
 from password import Credentials
-
-def create_new_user(username,password):
-    """
-    function to create new user
-    """
-    new_user = User(username,password)
-    return new_user
+from password_test import save_credential_test
 
 def save_user(user):
     """
@@ -26,7 +20,7 @@ def login_user(username,password):
     """
     check_user = Credentials.verify_user(username,password)
     return check_user
-
+    
 def create_new_credential(account,username,password):
     """
     function that creates new credential for a user
@@ -97,10 +91,10 @@ username = input("user name:")
 password = input("password:")
 login = login_user(username,password)
 if login_user == login:
-    print(f"{username} Welcome to password manager")
-    print('\n')
+        print(f"{username} Welcome to password manager")
+        print('\n')
     
-    while True:
+while True:
         print("use these short codes:\n CREATE -Create new credential \n DISPLAY -Display credential \n FIND -Find credential \n GENERATE - Generate a random password \n DELETE -Delete credential \n EXIT - Exit \n")
         short_code = input().lower().strip()
         if short_code == "CREATE":
@@ -122,7 +116,7 @@ if login_user == login:
                 else:
                     print("Invalid password.Please try again")
 
-            save_credentials(create_new_credential(account,username,password))  
+            save_credential_test(create_new_credential(account,username,password))  
             print('\n')
             print(f"Account credentials for: {account} - UserName: {username} - password: {password} created successfully")
             print ('\n')
@@ -139,25 +133,26 @@ if login_user == login:
                 print("You do not have any credentials saved yet")
         elif short_code == "find": 
           print("Write the account name you want to search for")
-        serch_name = input().lower()
-        if find_credential(search_name):
+        search_name = input().lower()
+        if check_credential(search_name):
             search_credential = find_credentials(search_name)
             print ('_' *50)
             search_credential.delete_credential()
             print('\n')
-    else:
-      print("The credential does not exist")
+        else:
+         print("The credential does not exist")
     
-elif short_code == 'generate':
-        password = generate_password()
-        print(f" {password} has been generated successfully. You can proceed")
-elif short_code == 'exit':
-        print("Thank you for using password manager")
-        break 
-else:
-      print:("Wrong entry, Please try again")
-       else:
-            print("Enter a valid input to continue")
+# elif short_code == 'generate':
+#         password = generate_password()
+#         print(f" {password} has been generated successfully. You can proceed")
+# elif short_code == 'exit':
+#         print("Thank you for using password manager")
+#         break 
+# else:
+#       print:("WrongDocumentErr entry, Please try again")
+#         else:
+#         print("Enter a valid input to continue")
 
-       if __name__ == '__main__':
-        password()
+if __name__ == '__main__':
+            passlocker()
+        
