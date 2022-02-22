@@ -1,11 +1,13 @@
-from dis import show_code
-from ssl import _PasswordType
-from click import password_option
-
-from pyrfc3339 import generate
 from password import User, find_credentials 
 from password import Credentials
 from password_test import save_credential_test
+
+def create_new_user(account,username,password):
+    """
+    function to create new account details
+    """
+    new_user = User(account,username,password)
+    return new_user
 
 def save_user(user):
     """
@@ -69,7 +71,6 @@ def passlocker():
     short_code=input("").lower().strip()
     if short_code == "create":
         print("Sign up")
-        print('*' *50)
         username = input("User_name:")
         while True:
             print("TYPE - To type password of your choice: \n GENERATE - To generate a random password")
@@ -82,14 +83,10 @@ def passlocker():
                 break
             else:
                 print("Invalid password please try again")
-            save_user(create_new_user(username,_password))
-            print ("*" *85)
+            save_user(create_new_user(username,password,))
             print(f"{username}, your account has been created! Your password is :{password}")
-            print("*" *85)
     elif short_code == "list":
-        print("*" *50)
         print("Enter your user name and password to login")
-        print("*" *50)
         username = input ("user name:")
         password = input ("password:")
         login = login_user(username,password)
@@ -97,17 +94,16 @@ def passlocker():
             print(f"{username}.Welcome to password manager")
             print('\n')
     while True:
-        print("use these short codes:\n CREATE -Create new credential \n DISPLAY -Display credential \n FIND -Find credential \n GENERATE - Generate a random password \n DELETE -Delete credential \n EXIT - Exit \n")
+        print("use these short codes:\n new -Create new credential \n DISPLAY -Display credential \n FIND -Find credential \n GENERATE - Generate a random password \n DELETE -Delete credential \n EXIT - Exit \n")
         short_code = input().lower().strip()
-        if short_code == "CREATE":
+        if short_code == "new":
             print("Create new account")
-            print("* *20")
             print ("Account name....")
             account = input().lower()
             print("Your username")
             username = input()      
             while True:
-                print ("TYPE - To create your own password if you already have an account: \n GENERATE - To generate a new pasaword")
+                print ("CP - To create your own password if you already have an account: \n GENERATE - To generate a new pasaword")
                 password_choice = input().lower().strip()
                 if password_choice == 'type':
                     password = input ("Type password of your choice \n")
@@ -124,12 +120,8 @@ def passlocker():
         elif short_code == "display":
          if display_account_details():
             print("Here are your accounts: ")
-            print('*' *30)
-            print('_' *30)
             for account in display_account_details():
-                print(f"Account:{account.account} \n User name:{username} \n Password:{password}")
-                print('*'* 30)
-                print('*' *30)     
+                print(f"Account:{account.account} \n User name:{username} \n Password:{password}")    
             else:
                 print("You do not have any credentials saved yet")
         elif short_code == "find": 
@@ -137,7 +129,6 @@ def passlocker():
         search_name = input().lower()
         if check_credential(search_name):
             search_credential = find_credentials(search_name)
-            print ('_' *50)
             search_credential.delete_credential()
             print('\n')
         else:
